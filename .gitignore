@@ -1,1 +1,5 @@
 venv
+correct
+misclassified
+__pycache__
+*.zip

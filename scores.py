@@ -8,14 +8,13 @@ def score_in_details(pred, real, probas):
   y_pred = pred
   y_real = real
     
-  pred_score = [max(x) for x in probas]
   accuracy = recall_score(y_real, y_pred, average='weighted')
   precision = precision_score(y_real, y_pred, average='weighted')
   recall = recall_score(y_real, y_pred, average='weighted')
   f1 = f1_score(y_real, y_pred, average='weighted')
-  roc_auc = roc_auc_score(y_real, pred_score, average='weighted')
+  roc_auc = roc_auc_score(y_real, probas, average='weighted')
   mcc_score = matthews_corrcoef(y_real, y_pred)
-  fpr, tpr, _ = roc_curve(y_real, pred_score)
+  fpr, tpr, _ = roc_curve(y_real, probas)
 
   print(f"Accuracy: {accuracy * 100}%")
   print(f"Precision: {precision}")
