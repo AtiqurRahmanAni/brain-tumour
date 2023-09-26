@@ -27,7 +27,7 @@ def score_in_details(pred, real, probas):
   print()
 
 
-  _, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5))
+  _, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5), dpi=1000)
   conf_matrix = confusion_matrix(y_real, y_pred)
   sns.heatmap(pd.DataFrame(conf_matrix), annot=True, cmap ='Blues', fmt='g', xticklabels=class_name, yticklabels=class_name, ax=ax1)
   ax1.set_title('Confusion matrix')
