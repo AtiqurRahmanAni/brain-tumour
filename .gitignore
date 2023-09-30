@@ -3,3 +3,5 @@ correct
 misclassified
 __pycache__
 *.zip
+.vscode
+__pycache__
